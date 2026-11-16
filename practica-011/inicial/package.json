@@ -1,0 +1,17 @@
+{
+  "name": "lab11-cliente-api-rest",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node app.mjs",
+    "test-rest": "mocha ./test/rest.spec.mjs --reporter spec --exit"
+  },
+  "dependencies": {
+    "express": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*",
+    "chai-http": "*"
+  }
+}

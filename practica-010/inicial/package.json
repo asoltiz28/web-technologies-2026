@@ -1,0 +1,11 @@
+{
+  "name": "lab10-api-rest",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node app.mjs"
+  },
+  "dependencies": {
+    "express": "*"
+  }
+}

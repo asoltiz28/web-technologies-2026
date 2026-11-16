@@ -3,6 +3,8 @@ import express from 'express';
 const app = express();
 const PORT = 3000;
 
+// en el examen se utiliaara post para crear
+
 // TODO: publicar la carpeta public
 app.use(express.static('public'));
 

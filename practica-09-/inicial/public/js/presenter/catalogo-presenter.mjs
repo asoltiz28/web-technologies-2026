@@ -27,3 +27,5 @@ export function crearCatalogoPresenter(modelo) {
 
   return { iniciar };
 }
+
+//practicas interfaces rest completas 
