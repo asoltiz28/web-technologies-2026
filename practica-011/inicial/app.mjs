@@ -13,6 +13,11 @@ app.get('/libros', function (req, res) {
   // TODO: si req.query.disponible es 'true',
   // devolver modelo.obtenerDisponibles().
   // En caso contrario, devolver modelo.obtenerTodos().
+  if (req.query.disponible === 'true'){
+    res.json(modelo.obtenerDisponibles());
+  } else {
+    res.json(modelo.obtenerTodos());
+  }
 });
 
 app.get('/libros/:id', function (req, res) {

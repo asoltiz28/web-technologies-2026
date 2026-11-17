@@ -11,6 +11,7 @@ export function crearCatalogo(librosIniciales) {
 
   function obtenerDisponibles() {
     // TODO: devolver únicamente los libros con disponible === true
+    return libros.filter((libro) => libro.disponible === true);
   }
 
   function agregar(libro) {
