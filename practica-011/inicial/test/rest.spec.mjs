@@ -23,10 +23,21 @@ describe('API libros', function () {
   it('GET /libros?disponible=true devuelve solo libros disponibles', async function () {
     // TODO:
     // 1. crear requester;
+    const requester = chai.request.execute(app).keepOpen();
     // 2. hacer GET /libros?disponible=true;
+    const response = await requester
+      .get('/libros?disponible=true')
+      .send();
     // 3. comprobar status 200;
+    assert.equal(response.status, 200);
+    assert.isTrue(response.ok);
     // 4. comprobar longitud 2;
+    assert.equal(response.body.length, 2);
     // 5. comprobar que todos tienen disponible === true;
+    for (const libro of response.body) {
+      assert.isTrue(libro.disponible);
+    }
     // 6. cerrar requester.
+    requester.close();
   });
 });
