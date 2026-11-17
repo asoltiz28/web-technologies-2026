@@ -11,7 +11,13 @@ export function crearCatalogo(librosIniciales) {
 
   function agregar(libro) {
     // TODO: asignar un id y añadir el libro al array
-    libro.id = libros.length + 1;
+    let maxId = 0; // maxId vale 0 y el primer libro recibe el id 1.
+    for (const l of libros){
+      if(l.id > maxId){
+        maxId = l.id;
+      }
+    }
+    libro.id = maxId + 1;
     libros.push(libro);
   }
 
@@ -20,8 +26,8 @@ export function crearCatalogo(librosIniciales) {
     const libro = buscarPorId(id);
     if(libro){
       libro.titulo = datos.titulo;
-      libro.autor = datos.autor; 
-      libro.precio = datos.precio;
+      libro.precio = datos.precio; 
+      libro.disponible = datos.disponible;
     }
     return libro;
   }

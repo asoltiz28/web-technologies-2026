@@ -36,14 +36,22 @@ app.post('/libros', function(req, res) {
 app.put('/libros/:id', function(req, res) {
   const id = Number(req.params.id);
   const libro = modelo.modificar(id, req.body);
-  res.json(libro);
+  if(libro){
+    res.json(libro);
+  } else {
+    res.status(404).json({ error: 'Libro no encontrado' });
+  }
 });
 
 // TODO: DELETE /libros/:id
 app.delete('/libros/:id', function(req, res) {
   const id = Number(req.params.id);
   const libro = modelo.eliminar(id);
-  res.json(libro);
+  if(libro){
+    res.json(libro);
+  } else {
+    res.status(404).json({ error: 'Libro no encontrado' });
+  }
 });
 
 app.listen(PORT, function() {
