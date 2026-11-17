@@ -4,7 +4,7 @@ export function crearCatalogoProxy() {
     // y devolver await response.json()
     const response = await fetch('/libros');
     if(!response.ok){
-      throw new Error('Error HTTP ${response.status}');
+      throw new Error(`Error HTTP ${response.status}`);
     }
     return await response.json();
   }

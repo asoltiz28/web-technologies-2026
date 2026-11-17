@@ -12,12 +12,14 @@ export function crearCatalogoPresenter(modelo) {
     }
   }
 
-  function mostrarTodos() {
-    renderizar(modelo.obtenerTodos());
+  async function mostrarTodos() { // async para poder usar await
+    const libros = await modelo.obtenerTodos();
+    renderizar(libros);
   }
 
-  function mostrarDisponibles() {
-    renderizar(modelo.obtenerDisponibles());
+  async function mostrarDisponibles() {
+    const libros = await modelo.obtenerDisponibles();
+    renderizar(libros);
   }
 
   function iniciar() {
